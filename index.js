@@ -3,7 +3,8 @@
 var facebook = require("./lib/services/facebook.service.js");
 
 module.exports = {
-    facebook: facebook
+    facebook: facebook,
+    github: github
 };
 
 // facebook(function(res) {
