@@ -2,7 +2,7 @@
 
 var facebook = require("./lib/services/facebook.service.js");
 
-module.exports = return {
+module.exports = {
     facebook: facebook
 };
 
