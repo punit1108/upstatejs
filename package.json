@@ -1,0 +1,25 @@
+{
+  "name": "downy",
+  "version": "0.0.1",
+  "description": "Gives status of popular services.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "status",
+    "services",
+    "facebook",
+    "github",
+    "aws",
+    "down",
+    "up",
+    "uptime",
+    "downtime"
+  ],
+  "author": "punit1108",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.72.0"
+  }
+}
