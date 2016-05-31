@@ -2,5 +2,6 @@
 
 Get status of popular services on the go.
 
-Services supported : 
+Services supported :
   - Facebook
+  - Github
