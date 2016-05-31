@@ -25,5 +25,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/punit1108/downy.git"
+  },
+  "bugs": {
+    "web": "https://github.com/punit1108/downy/issues"
   }
 }
