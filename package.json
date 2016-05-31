@@ -1,6 +1,6 @@
 {
   "name": "downy",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Gives status of popular services.",
   "main": "index.js",
   "scripts": {
