@@ -1,10 +1,11 @@
 {
   "name": "downy",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Gives status of popular services.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [
     "status",
@@ -17,7 +18,7 @@
     "uptime",
     "downtime"
   ],
-  "author": "punit1108",
+  "author": "punit1108 <punitkpal@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "request": "^2.72.0"
