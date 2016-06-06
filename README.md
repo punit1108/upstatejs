@@ -5,6 +5,7 @@ Get status of popular services on the go.
 Services supported :
   - Facebook
   - Github
+  - Heroku
 
 ###Quick Setup
 
@@ -26,6 +27,7 @@ The status queries for the services can be called by
 
 	downy.facebook()
     downy.github()
+    downy.heroku()
 
 both of which provide a callback function, which is called after the process of fetching the status is completed.
 
