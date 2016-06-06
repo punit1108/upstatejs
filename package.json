@@ -1,6 +1,6 @@
 {
   "name": "downy",
-  "version": "0.2.0-0",
+  "version": "0.2.0",
   "description": "Gives status of popular services.",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
     "services",
     "facebook",
     "github",
+    "heroku",
     "aws",
     "down",
     "up",
