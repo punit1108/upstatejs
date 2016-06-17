@@ -1,6 +1,8 @@
-# downy
+# downy 
 
 Get status of popular services on the go.
+
+[![NPM](https://nodei.co/npm/downy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/downy/)
 
 Services supported :
   - Facebook
