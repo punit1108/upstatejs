@@ -4,6 +4,8 @@ Get status of popular services on the go.
 
 [![NPM](https://nodei.co/npm/downy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/downy/)
 
+[![CircleCI](https://circleci.com/gh/punit1108/downy/tree/master.svg?style=svg&circle-token=36df2a03348c641b59526884a6fb868f7442f0d1)](https://circleci.com/gh/punit1108/downy/tree/master)
+
 Services supported :
   - Facebook
   - Github
