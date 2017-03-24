@@ -12,7 +12,7 @@ Services supported :
   - Github
   - Heroku
 
-###Quick Setup
+### Quick Setup
 
     npm install downy
 
@@ -26,7 +26,7 @@ include the library by doing
 
 and you are ready to use downy
 
-###Usage
+### Usage
 
 The status queries for the services can be called by
 
