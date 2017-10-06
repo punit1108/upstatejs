@@ -1,11 +1,11 @@
-# upstate
+# upstatejs
 
 Get status of popular services on the go.
 
-[![NPM](https://nodei.co/npm/upstate.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/upstate/)
+[![NPM](https://nodei.co/npm/upstatejs.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/upstatejs/)
 
-[![CircleCI](https://circleci.com/gh/punit1108/upstate.svg?style=svg&circle-token=36df2a03348c641b59526884a6fb868f7442f0d1)](https://circleci.com/gh/punit1108/upstate/tree/master)
-    [![Build Status](https://travis-ci.org/punit1108/upstate.svg?branch=master)](https://travis-ci.org/punit1108/upstate)
+[![CircleCI](https://circleci.com/gh/punit1108/upstatejs.svg?style=svg&circle-token=36df2a03348c641b59526884a6fb868f7442f0d1)](https://circleci.com/gh/punit1108/upstatejs/tree/master)
+    [![Build Status](https://travis-ci.org/punit1108/upstatejs.svg?branch=master)](https://travis-ci.org/punit1108/upstatejs)
 
 Services supported :
   - Facebook
@@ -14,15 +14,15 @@ Services supported :
 
 ### Quick Setup
 
-    npm install upstate
+    npm install upstatejs
 
 you can also install without worrying about adding to package.json
 
-    npm install upstate --save
+    npm install upstatejs --save
 
 include the library by doing
 
-    var upstate = require("upstate")
+    var upstate = require("upstatejs")
 
 and you are ready to use upstate
 

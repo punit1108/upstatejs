@@ -1,5 +1,5 @@
 {
-  "name": "upstate",
+  "name": "upstatejs",
   "version": "0.2.0",
   "description": "Gives status of popular services.",
   "main": "index.js",
@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/punit1108/upstate.git"
+    "url": "git+https://github.com/punit1108/upstatejs.git"
   },
   "bugs": {
-    "web": "https://github.com/punit1108/upstate/issues"
+    "web": "https://github.com/punit1108/upstatejs/issues"
   }
 }
