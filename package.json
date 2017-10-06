@@ -4,7 +4,7 @@
   "description": "Gives status of popular services.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/test.js",
+    "test": "mocha",
     "start": "node index.js"
   },
   "keywords": [
@@ -24,7 +24,9 @@
   "dependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "proxyquire": "^1.8.0",
+    "sinon": "^4.0.1"
   },
   "repository": {
     "type": "git",
