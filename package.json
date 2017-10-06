@@ -28,9 +28,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/punit1108/downy.git"
+    "url": "git+https://github.com/punit1108/upstate.git"
   },
   "bugs": {
-    "web": "https://github.com/punit1108/downy/issues"
+    "web": "https://github.com/punit1108/upstate/issues"
   }
 }

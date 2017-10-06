@@ -1,5 +1,3 @@
-'use strict';
-
 var facebook    = require("./lib/services/facebook.service.js");
 var github      = require("./lib/services/github.service.js");
 var heroku      = require("./lib/services/heroku.service.js");
