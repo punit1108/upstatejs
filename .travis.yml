@@ -1,7 +1,7 @@
 language: node_js
 node_js:
     - "stable"
-    - "6.3.0"
+    - "8.6.0"
 install:
     - npm install
 script:
