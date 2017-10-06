@@ -2,9 +2,9 @@
 
 Get status of popular services on the go.
 
-[![NPM](https://nodei.co/npm/downy.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/downy/)
+[![NPM](https://nodei.co/npm/upstate.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/upstate/)
 
-[![CircleCI](https://circleci.com/gh/punit1108/upstate.svg?style=svg&circle-token=36df2a03348c641b59526884a6fb868f7442f0d1)](https://circleci.com/gh/punit1108/downy/tree/master)
+[![CircleCI](https://circleci.com/gh/punit1108/upstate.svg?style=svg&circle-token=36df2a03348c641b59526884a6fb868f7442f0d1)](https://circleci.com/gh/punit1108/upstate/tree/master)
     [![Build Status](https://travis-ci.org/punit1108/upstate.svg?branch=master)](https://travis-ci.org/punit1108/upstate)
 
 Services supported :
@@ -14,31 +14,31 @@ Services supported :
 
 ### Quick Setup
 
-    npm install downy
+    npm install upstate
 
 you can also install without worrying about adding to package.json
 
-    npm install downy --save
+    npm install upstate --save
 
 include the library by doing
 
-    var downy = require("downy")
+    var upstate = require("upstate")
 
-and you are ready to use downy
+and you are ready to use upstate
 
 ### Usage
 
 The status queries for the services can be called by
 
-	downy.facebook()
-    downy.github()
-    downy.heroku()
+	upstate.facebook()
+    upstate.github()
+    upstate.heroku()
 
 both of which provide a callback function, which is called after the process of fetching the status is completed.
 
 you can use the above functions like below
 
-	downy.facebook(function (response){
+	upstate.facebook(function (response){
 		//PLAY WITH RESPONSE
 	});
 
@@ -51,6 +51,6 @@ the response has the following keys
 
 A list of services available can be found by
 
-    downy.list()
+    upstate.list()
 
 which return an `array` with name of the services available.
