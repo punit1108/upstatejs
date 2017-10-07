@@ -6,6 +6,7 @@ var requestStub = sinon.stub();
 var service = proxyquire("../lib/services/facebook.service", {
     request: requestStub
 });
+var config = require("./../lib/config/services.config.json")['facebook'];
 
 describe("Facebook service", function () {
     var callbackSpy;
@@ -18,9 +19,9 @@ describe("Facebook service", function () {
         requestStub.reset();
     });
 
-    it("should do GET http request to https://www.facebook.com/platform/api-status/", function () {
+    it("should do GET http request to " + config, function () {
         service(sinon.stub());
-        expect(requestStub.getCall(0).args[0].url).to.equal("https://www.facebook.com/platform/api-status/");
+        expect(requestStub.getCall(0).args[0].url).to.equal(config);
         expect(requestStub.getCall(0).args[0].method).to.equal("GET");
         expect(requestStub.getCall(0).args[0].headers["User-Agent"]).to.equal("request");
     });

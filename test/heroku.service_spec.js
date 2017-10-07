@@ -6,6 +6,7 @@ var requestStub = sinon.stub();
 var service = proxyquire('../lib/services/heroku.service', {
     request: requestStub
 });
+var config = require("./../lib/config/services.config.json")['heroku'];
 
 describe('Heroku service', function () {
 
@@ -19,9 +20,9 @@ describe('Heroku service', function () {
         requestStub.reset();
     });
 
-    it('should do GET http request to https://status.heroku.com/api/v3/current-status', function () {
+    it('should do GET http request to ' + config, function () {
         service(requestStub);
-        expect(requestStub.getCall(0).args[0].url).to.equal('https://status.heroku.com/api/v3/current-status');
+        expect(requestStub.getCall(0).args[0].url).to.equal(config);
         expect(requestStub.getCall(0).args[0].method).to.equal('GET');
         expect(requestStub.getCall(0).args[0].headers['User-Agent']).to.equal('request');
     });
