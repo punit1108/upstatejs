@@ -1,4 +1,4 @@
-# Contirbuting to UpstateJS
+# Contributing to UpstateJS
 
 UpstateJS is a simple tool to check status of popular APIs like Facebook API, Github API etc.
 
