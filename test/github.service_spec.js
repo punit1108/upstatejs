@@ -6,6 +6,7 @@ var requestStub = sinon.stub();
 var service = proxyquire('../lib/services/github.service', {
     request: requestStub
 });
+var config = require("./../lib/config/services.config.json")['github'];
 
 describe('Github service', function () {
 
@@ -19,9 +20,9 @@ describe('Github service', function () {
         requestStub.reset();
     });
 
-    it('should do GET http request to https://status.github.com/api/status.json', function () {
+    it('should do GET http request to ' + config, function () {
         service(sinon.stub());
-        expect(requestStub.getCall(0).args[0].url).to.equal('https://status.github.com/api/status.json');
+        expect(requestStub.getCall(0).args[0].url).to.equal(config);
         expect(requestStub.getCall(0).args[0].method).to.equal('GET');
         expect(requestStub.getCall(0).args[0].headers['User-Agent']).to.equal('request');
     });
