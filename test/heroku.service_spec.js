@@ -3,12 +3,12 @@ var sinon = require('sinon');
 var proxyquire = require('proxyquire');
 
 var requestStub = sinon.stub();
-var service = proxyquire('../lib/services/github.service', {
+var service = proxyquire('../lib/services/heroku.service', {
     request: requestStub
 });
-var config = require("./../lib/config/services.config.json")['github'];
+var config = require("./../lib/config/services.config.json")['heroku'];
 
-describe('Github service', function () {
+describe('Heroku service', function () {
 
     var callbackSpy;
 
@@ -21,7 +21,7 @@ describe('Github service', function () {
     });
 
     it('should do GET http request to ' + config, function () {
-        service(sinon.stub());
+        service(requestStub);
         expect(requestStub.getCall(0).args[0].url).to.equal(config);
         expect(requestStub.getCall(0).args[0].method).to.equal('GET');
         expect(requestStub.getCall(0).args[0].headers['User-Agent']).to.equal('request');
@@ -35,7 +35,6 @@ describe('Github service', function () {
         setTimeout(function() {
             expect(callbackSpy.calledOnce).to.equal(true);
             expect(callbackSpy.getCall(0).args[0].message).to.equal('Problem with the connection.');
-            expect(callbackSpy.getCall(0).args[0].data).to.equal(responseBody);
             done();
         }, 10);
     });
@@ -51,41 +50,66 @@ describe('Github service', function () {
         }, 10);
     });
 
-    it('should call provided callback with message "Minor Problems." if response status is "minor"', function(done) {
-        var responseBody = {
-            status: 'minor'
-        };
+    it('should call provided callback with message "Production and Development unhealthy." if production and development are not green', function(done) {
+      var responseBody = {
+          status: {
+            Production: 'red',
+            Development: 'red'
+          }
+      };
         requestStub.callsArgWithAsync(1, null, null, JSON.stringify(responseBody));
         service(callbackSpy);
         setTimeout(function() {
             expect(callbackSpy.calledOnce).to.equal(true);
-            expect(callbackSpy.getCall(0).args[0].message).to.equal('Minor Problems');
+            expect(callbackSpy.getCall(0).args[0].message).to.equal('Production and Development unhealthy.');
             done();
         }, 10);
     });
 
-    it('should call provided callback with message "Red Alert - Github may be down." if response status is "major"', function(done) {
-        var responseBody = {
-            status: 'major'
-        };
+    it('should call provided callback with message "Production unhealthy." if production is not green and development is green', function(done) {
+      var responseBody = {
+          status: {
+            Production: 'red',
+            Development: 'green'
+          }
+      };
         requestStub.callsArgWithAsync(1, null, null, JSON.stringify(responseBody));
         service(callbackSpy);
         setTimeout(function() {
             expect(callbackSpy.calledOnce).to.equal(true);
-            expect(callbackSpy.getCall(0).args[0].message).to.equal('Red Alert - Github may be down.');
+            expect(callbackSpy.getCall(0).args[0].message).to.equal('Production unhealthy.');
             done();
         }, 10);
     });
 
-    it('should call provided callback with message "Everything operating normally." if response status is "good"', function(done) {
-        var responseBody = {
-            status: 'good'
-        };
+    it('should call provided callback with message "Development unhealthy." if development is not green and production is green', function(done) {
+      var responseBody = {
+          status: {
+            Production: 'green',
+            Development: 'red'
+          }
+      };
         requestStub.callsArgWithAsync(1, null, null, JSON.stringify(responseBody));
         service(callbackSpy);
         setTimeout(function() {
             expect(callbackSpy.calledOnce).to.equal(true);
-            expect(callbackSpy.getCall(0).args[0].message).to.equal('Everything operating normally.');
+            expect(callbackSpy.getCall(0).args[0].message).to.equal('Development unhealthy.');
+            done();
+        }, 10);
+    });
+
+    it('should call provided callback with message "Service healthy." if development is green and production is green', function(done) {
+      var responseBody = {
+          status: {
+            Production: 'green',
+            Development: 'green'
+          }
+      };
+        requestStub.callsArgWithAsync(1, null, null, JSON.stringify(responseBody));
+        service(callbackSpy);
+        setTimeout(function() {
+            expect(callbackSpy.calledOnce).to.equal(true);
+            expect(callbackSpy.getCall(0).args[0].message).to.equal('Service healthy.');
             done();
         }, 10);
     });
